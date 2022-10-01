@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void) {
+	int T = 0;
+	scanf("%d", &T);
+	for (int a = 0; a < T; a++) {
+		int R = 0;
+		scanf("%d", &R);
+		char S[21] = { 0, };
+		scanf("%s", &S);
+		char P[161] = { 0, };
+		int j = 0;
+		for (int i = 0; S[i] != 0; i++) {
+			for (int k = 0; k < R; k++) {
+				P[j] = S[i];
+				j++;
+			}
+		}
+		printf("%s\n", P);
+	}
+	
+	return 0;
+}
