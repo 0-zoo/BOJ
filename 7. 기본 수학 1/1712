@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void) {
+
+	int A = 0;
+	int B = 0;
+	int C = 0;
+	int n = 0;
+	scanf("%d %d %d", &A, &B, &C);
+	if (B >= C) {
+		printf("-1\n");
+		return 0;
+	}
+	n = A / (C - B) + 1;
+	printf("%d", n);
+
+	return 0;
+}
