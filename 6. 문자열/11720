@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	int sum = 0;
+	int N = 0;
+	scanf("%d", &N);
+	char* arr = malloc(sizeof(char) * N);
+
+	scanf("%s", arr);
+
+	for (int i = 0; i < N; i++) {
+		sum += arr[i] - '0';
+	}
+	printf("%d\n", sum);
+
+	return 0;
+}
