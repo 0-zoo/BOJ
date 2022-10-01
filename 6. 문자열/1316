@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main(void) {
+	int N = 0;
+	scanf("%d", &N);
+	int count = 0;
+
+	for (int a = 0; a < N; a++) {
+		int flag = 1;
+		int alpha[26] = { 0, };
+		char s[101] = { 0, };
+		scanf("%s", &s);
+		
+		for (int i = 0; s[i] != 0; i++) {
+			alpha[s[i] - 97]++;
+			if (s[i] == s[i - 1]) {
+				alpha[s[i] - 97]--;
+			}
+		}
+		for (int i = 0; i < 26; i++) {
+			if (alpha[i] != 0 && alpha[i] != 1) {
+				flag = 0;
+				break;
+			}
+		}
+		if (flag == 1) {
+			count++;
+		}
+	}
+	printf("%d", count);
+
+
+	return 0;
+}
