@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void) {
+	int H, M;
+	scanf("%d %d", &H, &M);
+
+	int sum;
+	sum = 60 * H + M;
+	sum -= 45;
+	if (sum < 0) {
+		sum += 24 * 60;
+	}
+	H = sum / 60;
+	M = sum % 60;
+	printf("%d %d", H, M);
+
+	return 0;
+}
