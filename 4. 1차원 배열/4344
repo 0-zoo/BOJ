@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	int C = 0;
+	scanf("%d", &C);
+
+	for (int k = 0; k < C; k++) {
+		int N = 0;
+		int sum = 0;
+		double avg = 0;
+		int num = 0;
+		scanf("%d", &N);
+		int* arr = malloc(sizeof(int) * N);
+		for (int i = 0; i < N; i++) {
+			scanf("%d", &arr[i]);
+			sum += arr[i];
+		}
+		avg = sum / N;
+		for (int i = 0; i < N; i++) {
+			if (arr[i] > avg) {
+				num++;
+			}
+		}
+		printf("%.3f%%\n", (double)num / N * 100);
+	}
+	
+	return 0;
+}
