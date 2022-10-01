@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(void) {
+
+	int H, M;
+	int sum;
+	int cook;
+
+	scanf("%d %d", &H, &M);
+	scanf("%d", &cook);
+
+	sum = 60 * H + M;
+	sum += cook;
+	if (sum >= 24 * 60) {
+		sum -= 24 * 60;
+	}
+	H = sum / 60;
+	M = sum % 60;
+	printf("%d %d", H, M);
+
+	return 0;
+}
