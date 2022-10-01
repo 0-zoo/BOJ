@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int num_of_hansu(int N) {
+	int num = 0;
+	for (int i = 1; i <= N; i++) {
+		if (is_hansu(i) == 1) {
+			num++;
+		}
+	}
+	return num;
+}
+int is_hansu(int i) {
+	int flag = 1;
+	if (i / 100 != 0) {
+		if ((i % 10 - (i % 100) / 10) != ((i % 100) / 10 - i / 100)) {
+			flag = 0;
+		}
+	}
+	return flag;
+}
+int main(void) {
+	int N = 0;
+	scanf("%d", &N);
+	printf("%d", num_of_hansu(N));
+
+	return 0;
+}
