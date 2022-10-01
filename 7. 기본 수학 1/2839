@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int count_bag(int count, int n) {
+	if (n % 3 == 0) {
+		count += n / 3;
+		return count;
+	}
+	else {
+		n += 5;
+		count--;
+		if (count < 0) {
+			return -1;
+		}
+		count_bag(count, n);
+	}
+}
+
+int main(void) {
+
+	int num = 0;
+	scanf("%d", &num);
+	int count = 0;
+	count = num / 5;
+	num = num % 5;
+
+	if (num == 0) {
+		printf("%d\n", count);
+	}
+	else {
+		printf("%d\n", count_bag(count, num));
+	}
+
+	return 0;
+}
