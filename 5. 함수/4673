@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+void zero_arr(int* arr) {
+	int A = 0;
+	int B = 0;
+	int C = 0;
+	int D = 0;
+	int num = 0;
+	for (int i = 1; i < 10001; i++) {
+		A = i / 1000;
+		B = (i % 1000) / 100;
+		C = (i % 100) / 10;
+		D = i % 10;
+		num = i + A + B + C + D;
+		for (int k = 1; k < 10001; k++) {
+			if (num == arr[k]) {
+				arr[k] = 0;
+				break;
+			}
+		}
+	}
+}
+void print_selfnum(int* arr) {
+	for (int i = 1; i < 10001; i++) {
+		if (arr[i] != 0) {
+			printf("%d\n", arr[i]);
+		}
+	}
+}
+int main(void) {
+	int arr[10001] = { 0, };
+	for (int i = 1; i < 10001; i++) {
+		arr[i] = i;
+	}
+	zero_arr(arr);
+	print_selfnum(arr);
+
+	return 0;
+}
