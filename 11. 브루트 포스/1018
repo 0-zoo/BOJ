@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int chess(char arr[51][51], int k, int i) {
+	int case1 = 0;
+	int case2 = 0;
+	int min = 0;
+	for (int j = 0; j < 8; j++) {
+		for (int h = 0; h < 8; h++) {
+			if ((j % 2) == (h % 2)) {
+				if (arr[k + j][i + h] != 'W') { case1++; }
+				else { case2++; }
+			}
+			else {
+				if (arr[k + j][i + h] != 'B') { case1++; }
+				else { case2++; }
+			}
+		}
+	}
+	if (case1 < case2) { min = case1; }
+	else { min = case2; }
+	return min;
+}
+
+int main()
+{
+	char arr[51][51] = { 0, };
+	int N = 0;
+	int M = 0;
+	scanf("%d %d", &N, &M);
+
+	int fin = 2500;
+
+	for (int i = 0; i < N; i++) {
+		scanf("%s", arr[i]);
+	}
+
+	for (int k = 0; k + 8 <= N; k++) {
+		for (int i = 0; i + 8 <= M; i++) {
+			if (chess(arr, k, i) < fin) {
+				fin = chess(arr, k, i);
+			}
+		}
+	}
+	printf("%d\n", fin);
+    
+	
+    return 0;
+}
