@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+void count(char* ch,int* alphabet) {
+	for (int i = 0; ch[i] != 0; i++) {
+		if (ch[i] >= 65 && ch[i] <= 90) {
+			alphabet[ch[i] - 65]++;
+		}
+		if (ch[i] >= 97 && ch[i] <= 122) {
+			alphabet[ch[i] - 97]++;
+		}
+	}
+}
+void max(int* alphabet) {
+	int max = 0;
+
+	char max_alphabet = 0;
+	for (int i = 0; i < 26; i++) {
+		if (max < alphabet[i]) {
+			max = alphabet[i];
+			max_alphabet = i + 65;
+		}
+	}
+	int num = 0;
+	for (int i = 0; i < 26; i++) {
+		if (max == alphabet[i]) {
+			num++;
+		}
+	}
+	if (num == 1) {
+		printf("%c\n", max_alphabet);
+	}
+	else {
+		printf("?\n");
+	}
+}
+int main(void) {
+
+	char max_alphabet = 0;
+	char ch[1000001] = { 0, };
+	int alphabet[26] = { 0, };
+
+	scanf("%s", &ch);
+	count(ch, alphabet);
+	max(alphabet);
+	
+	return 0;
+}
