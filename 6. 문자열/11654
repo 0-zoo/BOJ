@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(void) {
+
+	char a = 0;
+	scanf("%c", &a);
+	getchar();
+	printf("%d \n", a);
+	
+
+	return 0;
+}
