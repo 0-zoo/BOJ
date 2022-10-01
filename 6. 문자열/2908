@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main(void) {
+	int answer = 0;
+
+	int A = 0;
+	int a1 = 0;
+	int a2 = 0;
+	int a3 = 0;
+	int A2 = 0;
+
+	int B = 0;
+	int b1 = 0;
+	int b2 = 0;
+	int b3 = 0;
+	int B2 = 0;
+
+	scanf("%d %d", &A, &B);
+
+	a1 = A / 100;
+	a2 = (A % 100) / 10;
+	a3 = A % 10;
+	A2 = a3 * 100 + a2 * 10 + a1;
+
+	b1 = B / 100;
+	b2 = (B % 100) / 10;
+	b3 = B % 10;
+	B2 = b3 * 100 + b2 * 10 + b1;
+
+	if (A2 > B2) {
+		answer = A2;
+	}
+	else {
+		answer = B2;
+	}
+	printf("%d\n", answer);
+	
+	return 0;
+}
