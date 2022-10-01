@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void) {
+	int T = 0;
+	scanf("%d", &T);
+	int H = 0;
+	int W = 0;
+	int N = 0;
+	for (int i = 0; i < T; i++) {
+		scanf("%d %d %d", &H, &W, &N);
+		int Y = 0;
+		int X = 0;
+		for (int i = 0; N > 0; i++) {
+			N -= H;
+			X++;
+		}
+		N += H;
+		Y = N;
+		if (X / 10 == 0) {
+			printf("%d0%d\n", Y, X);
+		}
+		else {
+			printf("%d%d\n", Y, X);
+		}
+	}
+
+	return 0;
+}
